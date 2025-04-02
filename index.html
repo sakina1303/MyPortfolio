@@ -5,117 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-
-        header nav a:hover {
-            color: #f4f4f4;
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 2rem;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        #about p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .project {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            flex: 1 1 calc(33.333% - 2rem);
-            box-sizing: border-box;
-            background: #fff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .project h3 {
-            margin-top: 0;
-            color: #333;
-        }
-
-        #contact p {
-            font-size: 1.1rem;
-        }
-
-        #contact a {
-            color: #0073e6;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        #contact a:hover {
-            color: #005bb5;
-            text-decoration: underline;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .project {
-                flex: 1 1 calc(50% - 2rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .project {
-                flex: 1 1 100%;
-            }
-
-            header nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-        }
-    </style> -->
 </head>
 <body>
     <header>
         <h1>Welcome to My Portfolio!</h1>
         <nav>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -125,6 +21,31 @@
         <h1 style="font-size: 35px; margin: auto;">About Me</h1>
         <h4>Hello! I'm Sakina, a passionate developer with a keen interest in creating beautiful and functional web applications.</h4>
         <p>Welcome to my portfolio! I love exploring new technologies and continuously improving my skills. My journey in web development has been exciting, and I'm eager to share my work with you.</p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C++</li>
+            <li><strong>Frameworks & Libraries:</strong> React, Node.js</li>
+            <li><strong>Development Tools:</strong> Git, GitHub, Webflow, Vercel</li>
+            <li><strong>Design Tools:</strong> Canva, Figma</li>            
+            <li><strong>Other Skills:</strong> Responsive Design, UI/UX Design, Debugging, Problem-Solving</li>
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
+            <li>Developed and deployed multiple web applications with a focus on user experience.</li>
+            <li>Core organizer of the first TechFest at Newton School of Technology, ADYPU, Pune.</li>
+            <li>Advanced to the second round of the 'VisionVault' competition by analyzing HR-based scenarios.</li>
+            <li>Actively contributed to Hacktoberfest, enhancing collaboration and open-source contribution skills.</li>
+            <li>Participated in various hackathons, showcasing problem-solving skills and teamwork.</li>
+            <li>Completed multiple online courses to enhance technical skills and knowledge.</li>
+            <li>Received positive feedback from peers and mentors for collaborative projects.</li>
+        </ul>
     </section>
 
     <section id="projects">
@@ -184,17 +105,26 @@
         <p>Github:  <a href="https://github.com/sakina1303" target="_blank">https://github.com/sakina1303</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/" target="_blank">https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/</a></p>
     </section>
+    
+    <section id="quote" style="text-align: center; padding: 20px;">
+        <h2>Quote of the Day</h2>
+        <blockquote id="quote-text" style="max-width: 600px; margin: auto; font-style: italic;"></blockquote>
+        <p id="quoteDisplay" style="margin-top: 10px;">Click the button to get a quote!</p>
+        <button id="quoteButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate Quote</button>
+    </section>
+    <section id="footer">
+        <h2>Thank you for visiting my portfolio!</h2>
+        <p>If you have any questions or would like to connect, feel free to reach out.</p>
 
     <footer>
         © <span id="year"></span> Sakina. All rights reserved.
     </footer>
+    <script src="script.js"></script>
     
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     
-    <script src="script.js"></script>
-
-    
+   
 </body>
 </html>

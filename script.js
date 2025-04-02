@@ -77,4 +77,39 @@ document.addEventListener("DOMContentLoaded", () => {
             quoteDisplay.textContent = quotes[randomIndex];
         });
     }
+    // New Feature: Live clock display
+    const clockElement = document.getElementById("liveClock");
+    if (clockElement) {
+        setInterval(() => {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            clockElement.textContent = `Current Time: ${timeString}`;
+        }, 1000);
+    }
+
+    // New Feature: Image carousel
+    const carouselImages = document.querySelectorAll(".carousel img");
+    const nextButton = document.getElementById("nextImage");
+    const prevButton = document.getElementById("prevImage");
+    let currentImageIndex = 0;
+
+    if (carouselImages.length > 0 && nextButton && prevButton) {
+        const updateCarousel = () => {
+            carouselImages.forEach((img, index) => {
+                img.style.display = index === currentImageIndex ? "block" : "none";
+            });
+        };
+
+        nextButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+            updateCarousel();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+            updateCarousel();
+        });
+
+        updateCarousel(); // Initialize carousel display
+    }
 });
