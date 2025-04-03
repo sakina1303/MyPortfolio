@@ -70,46 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "The best way to predict the future is to invent it.",
             "Life is 10% what happens to us and 90% how we react to it.",
             "Success is not the key to happiness. Happiness is the key to success.",
-            "Your time is limited, so don’t waste it living someone else’s life."
+            "Your time is limited, so don’t waste it living someone else’s life.",
+            "The only way to do great work is to love what you do.",
+            
         ];
         quoteButton.addEventListener("click", () => {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             quoteDisplay.textContent = quotes[randomIndex];
         });
     }
-    // New Feature: Live clock display
-    const clockElement = document.getElementById("liveClock");
-    if (clockElement) {
-        setInterval(() => {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString();
-            clockElement.textContent = `Current Time: ${timeString}`;
-        }, 1000);
-    }
-
-    // New Feature: Image carousel
-    const carouselImages = document.querySelectorAll(".carousel img");
-    const nextButton = document.getElementById("nextImage");
-    const prevButton = document.getElementById("prevImage");
-    let currentImageIndex = 0;
-
-    if (carouselImages.length > 0 && nextButton && prevButton) {
-        const updateCarousel = () => {
-            carouselImages.forEach((img, index) => {
-                img.style.display = index === currentImageIndex ? "block" : "none";
-            });
-        };
-
-        nextButton.addEventListener("click", () => {
-            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-            updateCarousel();
-        });
-
-        prevButton.addEventListener("click", () => {
-            currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
-            updateCarousel();
-        });
-
-        updateCarousel(); // Initialize carousel display
-    }
+    
 });

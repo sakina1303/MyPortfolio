@@ -243,7 +243,34 @@
         color: #333;
     }
 
+    #extra-curricular {
+       display: flex;
+        align-items: left;
+        justify-content: left;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to right, #fff, #f9f9f9);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
 
+  
+   
+    #education {
+        display: flex;
+        align-items: center;
+       ;
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(to right, #fff, #f9f9f9);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
     #contact p {
         font-size: 1.2rem;
         margin-bottom: 1rem;
