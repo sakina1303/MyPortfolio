@@ -4,62 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio!</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-pill">SF</span>
+                <div>
+                    <h1 class="brand-name">Sakina Farukh Ahemad</h1>
+                    <p class="tagline">Developer • Designer • Community Builder</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a class="btn btn-ghost" href="#contact">Let's Connect</a>
+        </div>
     </header>
 
-    <section id="about">
-        <h1 style="font-size: 35px; margin: auto;">About Me</h1>
-        <h4>Hello! I'm Sakina, a passionate developer with a keen interest in creating beautiful and functional web applications.</h4>
-        <p>Welcome to my portfolio! I love exploring new technologies and continuously improving my skills. My journey in web development has been exciting, and I'm eager to share my work with you.</p>
+    <section id="about" class="section">
+        <h1 class="section-title">About Me</h1>
+        <h4 class="lead">Hello! I'm Sakina, a passionate developer who loves building beautiful and functional web applications.</h4>
+        <p>Welcome to my portfolio! I enjoy exploring new technologies and continuously improving my skills.
+    My journey in web development has been exciting, and I'm thrilled to share my projects and experiences with you.</p>
     </section>
 
-    <section id="education">
-        <h1 style="font-size: 35px; margin: auto;">Education</h1>
+    <section id="education" class="section">
+        <h1 class="section-title">Education</h1>
         <p>Bachelor of Technology in Computer Science and Engineering with specializiation in Ai & ML</p>
         <p>Newton School of Technology, ADYPU, Pune</p>
         <p>Expected Graduation: 2028</p>
         <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Management Systems</p>
     </section>
 
-    <section id="skills">
-        <h1>My Skills</h1>
-        <ul>
-            <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C++</li>
-            <li><strong>Frameworks & Libraries:</strong> React, Node.js</li>
-            <li><strong>Development Tools:</strong> Git, GitHub, Webflow, Vercel</li>
-            <li><strong>Design Tools:</strong> Canva, Figma</li>            
-            <li><strong>Other Skills:</strong> Responsive Design, UI/UX Design, Debugging, Problem-Solving</li>
+    <section id="skills" class="section">
+        <h1 class="section-title">My Skills</h1>
+        <ul class="skills-list">
+        <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C++, SQL (MySQL)</li> 
+        <li><strong>Frameworks & Libraries:</strong> React, React Native, Node.js, Express.js, Prisma ORM</li>
+        <li><strong>Development Tools:</strong> Git, GitHub, Webflow, Vercel</li>
+        <li><strong>Databases & Backend Services:</strong> MongoDB, Supabase</li>
+        <li><strong>Design Tools:</strong> Figma, Canva</li>
+        <li><strong>Other Skills:</strong> Responsive Design, UI/UX Design, Debugging, Problem Solving</li>
         </ul>
     </section>
 
-    <section id="extra-curricular">
-        <h1>Extra-Curricular Activities</h1>
-        <ul>
-            <li>Member , Developers club (NSDC), Involved in student clubs and organizations, fostering networking and collaboration.</li>
-            <li>Member, E-Cell Club – Collaborating on entrepreneurial initiatives, networking with industry leaders, and contributing to startup-driven projects.</li>  
+    <section id="extra-curricular" class="section">
+        <h1 class="section-title">Extra-Curricular Activities</h1>
+        <ul class="bulleted-list">
+            <li>Member , Developers club (NST-SDC), Involved in student clubs and organizations, fostering networking and collaboration.</li>
+             <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
+             <li>Member, E-Cell Club – Collaborating on entrepreneurial initiatives, networking with industry leaders, and contributing to startup-driven projects.</li>  
             <li>Member, Content Creation Club – Developing engaging content, enhancing digital presence, and managing creative storytelling for various campaigns.</li>
             <li>Core organizer of the first TechFest at Newton School of Technology, ADYPU, Pune.</li>
-            <li>Semi-Finalist, Super Model Maharashtra (Season 2) – Achieved recognition in Maharashtra’s top fashion show, demonstrating poise, confidence, and stage presence.</li>
-            <li>Performed in a dance event on NSS Day (September 24) as part of the National Service Scheme (NSS) celebrations, demonstrating teamwork, cultural engagement, and event participation.</li>
-            <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
             <li>Engaged in community service and volunteering activities, promoting teamwork and leadership.</li>
-            <li>Participated in workshops and seminars to stay updated with the latest industry trends.</li> 
+            <li>Participated in workshops and seminars to stay updated with the latest industry trends.</li> <li>Semi-Finalist, Super Model Maharashtra (Season 2) – Achieved recognition in Maharashtra’s top fashion show, demonstrating poise, confidence, and stage presence.</li>
+            <li>Performed in a dance event on NSS Day (September 24) as part of the National Service Scheme (NSS) celebrations, demonstrating teamwork, cultural engagement, and event participation.</li>
+          
             </ul>
     </section>
 
-    <section id="achievements">
-        <h1>Achievements</h1>
-        <ul>
+    <section id="achievements" class="section achievements-section">
+        <h1 class="section-title">Achievements</h1>
+        <ul class="bulleted-list">
             <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
             <li>Developed and deployed multiple web applications with a focus on user experience.</li>
             <li>Advanced to the second round of the 'VisionVault' competition by analyzing HR-based scenarios.</li>
@@ -70,13 +84,49 @@
         </ul>
     </section>
 
-    <section id="projects">
-        <h1>My Projects</h1>
+    <section id="projects" class="section">
+        <h1 class="section-title">My Projects</h1>
         <div class="projects">
             <div class="project">
-                <h3>Sip & Savor</h3>
-                <p>A visually stunning and modern portfolio website designed on Webflow, showcasing my skills, projects, and passion for AI, full-stack development, and open-source contributions. Crafted with a sleek, user-friendly interface to create a seamless browsing experience.</p>
-                <a href="https://birajits-superb-site.webflow.io" target="_blank">View Project</a>
+                <h3>AI Quiz Generator</h3>
+                <p>AI Quiz Generator is a smart web app that lets users instantly generate topic-based quizzes using Google’s powerful Gemini AI. Whether you're preparing for exams or just testing your knowledge, this tool helps you learn in an interactive way by generating customized multiple-choice questions (MCQs) on any topic you enter.</p>
+                <a href="https://aiquizgenerator-69r2.onrender.com/" target="_blank">View Project</a>
+                <br>
+                <a href="https://github.com/sakina1303/QuizGenerator" target="_blank">View GitHub Repo</a>
+            </div>
+             <div class="project">
+                <h3>Agroedge</h3>
+                <p>AgroEdge is a growing agri-tech startup focused on building smart, accessible digital solutions for farmers and agricultural businesses. I contributed to the platform by building an authentication system, integrating an “Apply Now” flow, and developing both frontend and backend features connected to Supabase for real-time data handling. I also collaborated closely with the team, reviewed code, and maintained high-quality, reliable development practices.</p>
+                <a href="https://agroedge-vf.netlify.app/" target="_blank">View Project</a>
+                <br>
+                <a href="https://github.com/sakina1303/agroedge" target="_blank">View GitHub Repo</a>
+            </div>
+            <div class="project">
+                <h3>Closy</h3>
+                <p>Closy makes aesthetic outfit decisions effortless by suggesting looks based on your mood and event. It saves time, eliminates decision fatigue, and helps you create polished, stylish combinations with ease. Just pick a vibe, and Closy handles the rest.</p>
+                <a href="https://closy-fashion-app-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
+                <br>
+                <a href="https://github.com/sakina1303/closy-fashion-app" target="_blank">View GitHub Repo</a>
+            </div>
+            <div class="project">
+                <h3>Aurora</h3>
+                <p>Aurora is a modern digital diary app that makes journaling simple, aesthetic, and meaningful. It allows users to write daily entries, track their mood, add photos, and enjoy guided prompts. The app also includes a Vision Board for inspiration and a Habit Tracker to build consistency, all wrapped in a soothing pastel design with smooth animations for an engaging experience.</p>
+                <br>
+                <a href="https://github.com/sakina1303/Aurora" target="_blank">View GitHub Repo</a>
+            </div>
+            <div class="project">
+                <h3>PermKit</h3>
+                <p>Developed PermKit, a lightweight permission-handling utility for React Native apps supporting Camera, Location, Microphone, and Photo Library access. Built with React Native and react-native-permissions, using platform-specific mapping through the Platform API. Improved cross-platform stability by reducing permission errors and streamlining integration across multiple projects.</p>
+                <a href="https://www.npmjs.com/package/permkit" target="_blank">View Project</a>
+                <br>
+                <a href="https://github.com/sakina1303/permKit" target="_blank">View GitHub Repo</a>
+            </div>
+            <div class="project">
+                <h3>StackMate</h3>
+                <p>StackMate is a multipurpose VS Code extension that enhances developer productivity by centralizing tools like Stack Overflow search, personal notes, a JSON validator, color picker, internet status checker, language switcher, and a tree visualizer, all inside VS Code.</p>
+                <!-- <a href="" target="_blank">View Project</a> -->
+                <br>
+                <a href="https://github.com/sakina1303/VS-code-Extension" target="_blank">View GitHub Repo</a>
             </div>
             <div class="project">
                 <h3>Ivory Luxe</h3>
@@ -91,25 +141,9 @@
                 <a href="https://github.com/biru-codeastromer/Endsemproject" target="_blank">View GitHub Repo</a>
             </div>
             <div class="project">
-                <h3>Closy</h3>
-                <p>Closy makes aesthetic outfit decisions effortless by suggesting looks based on your mood and event. It saves time, eliminates decision fatigue, and helps you create polished, stylish combinations with ease. Just pick a vibe, and Closy handles the rest.</p>
-                <a href="https://closy-fashion-app-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
-                <br>
-                <a href="https://github.com/sakina1303/closy-fashion-app" target="_blank">View GitHub Repo</a>
-            </div>
-            <div class="project">
-                <h3>To do list</h3>
-                <p>Developed a dynamic To-Do List application using JavaScript, enabling users to add, edit, delete, and track task completion. Designed for an intuitive and efficient task management experience.</p>
-                <a href="https://todolist-navy-two.vercel.app/" target="_blank">View Project</a>
-                <br>
-                <a href="https://github.com/sakina1303/todolist" target="_blank">View GitHub Repo</a>
-            </div>
-            <div class="project">
-                <h3>Rock Paper Scissor</h3>
-                <p>A simple and interactive Rock-Paper-Scissors game that lets users play against the computer. Built with a clean UI and smooth functionality, it delivers a fun and engaging experience while demonstrating core programming logic and user interaction.</p>
-                <a href="https://rock-paper-scissors-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
-                <br>
-                <a href="https://github.com/sakina1303/RockPaperScissors" target="_blank">View GitHub Repo</a>
+                <h3>Sip & Savor</h3>
+                <p>A visually stunning and modern portfolio website designed on Webflow, showcasing my skills, projects, and passion for AI, full-stack development, and open-source contributions. Crafted with a sleek, user-friendly interface to create a seamless browsing experience.</p>
+                <a href="https://birajits-superb-site.webflow.io" target="_blank">View Project</a>
             </div>
             <div class="project">
                 <h3>bmi calculator</h3>
@@ -119,13 +153,6 @@
                 <a href="https://github.com/sakina1303/bmicalculator" target="_blank">View GitHub Repo</a>
             </div>
             <div class="project">
-                <h3>flashcards</h3>
-                <p>An interactive flashcard application designed to enhance learning and memorization. Users can create, review, and test themselves with customizable flashcards, making studying more efficient and engaging..</p>
-                <a href="https://flashcards-ebon-nu.vercel.app/" target="_blank">View Project</a>
-                <br>
-                <a href="https://github.com/sakina1303/flashcards" target="_blank">View GitHub Repo</a>
-            </div>
-            <div class="project">
                 <h3>Get The Weather</h3>
                 <p>weather site provides real-time weather updates for any location, displaying temperature, humidity, and other key details. It offers a simple and user-friendly interface for quick and accurate forecasts.</p>
                 <a href="https://weather-five-ecru.vercel.app/" target="_blank">View Project</a>
@@ -133,35 +160,39 @@
                 <a href="https://github.com/sakina1303/Weather" target="_blank">View GitHub Repo</a>
             </div>
             <div class="project">
-                <h3>Score-Board</h3>
-                <p>This is a simple Cricket Score-Board website that allows users to manually track the score, wickets, and overs for a cricket match. It uses state management to keep the score, wickets, and overs in sync with user input, and provides a simple interface for updating the match progress.</p>
-                <a href="https://scoreboard-dntq.vercel.app/" target="_blank">View Project</a>
+                <h3>Rock Paper Scissor</h3>
+                <p>A simple and interactive Rock-Paper-Scissors game that lets users play against the computer. Built with a clean UI and smooth functionality, it delivers a fun and engaging experience while demonstrating core programming logic and user interaction.</p>
+                <a href="https://rock-paper-scissors-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
                 <br>
-                <a href="https://github.com/sakina1303/Scoreboard" target="_blank">View GitHub Repo</a>
+                <a href="https://github.com/sakina1303/RockPaperScissors" target="_blank">View GitHub Repo</a>
             </div>
+            
             <div class="project">
-                <h3>AI Quiz Generator</h3>
-                <p>AI Quiz Generator is a smart web app that lets users instantly generate topic-based quizzes using Google’s powerful Gemini AI. Whether you're preparing for exams or just testing your knowledge, this tool helps you learn in an interactive way by generating customized multiple-choice questions (MCQs) on any topic you enter.</p>
-                <a href="https://github.com/sakina1303/QuizGenerator" target="_blank">View GitHub Repo</a>
+                <h3>flashcards</h3>
+                <p>An interactive flashcard application designed to enhance learning and memorization. Users can create, review, and test themselves with customizable flashcards, making studying more efficient and engaging..</p>
+                <a href="https://flashcards-ebon-nu.vercel.app/" target="_blank">View Project</a>
+                <br>
+                <a href="https://github.com/sakina1303/flashcards" target="_blank">View GitHub Repo</a>
             </div>
+            
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: sakena1303@gmail.com</p>
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Contact Me</h2>
+        <p>Email: <a href="mailto:sakena1303@gmail.com">sakena1303@gmail.com</a></p>
         <p>Github:  <a href="https://github.com/sakina1303" target="_blank">https://github.com/sakina1303</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/" target="_blank">https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/</a></p>
     </section>
     
-    <section id="quote" style="text-align: center; padding: 20px;">
-        <h2>Quote of the Day</h2>
-        <blockquote id="quote-text" style="max-width: 600px; margin: auto; font-style: italic;"></blockquote>
-        <p id="quoteDisplay" style="margin-top: 10px;">Click the button to get a quote!</p>
-        <button id="quoteButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate Quote</button>
+    <section id="quote" class="section quote-section">
+        <h2 class="section-title">Quote of the Day</h2>
+        
+        <p id="quoteDisplay">Click the button to get a quote!</p>
+        <button id="quoteButton" class="btn btn-primary">Generate Quote</button>
     </section>
 
-    <section id="footer">
+    <section id="footer" class="footer-section">
         
         <h2>Thank you for visiting my portfolio!</h2>
         <p>If you have any questions or would like to connect, feel free to reach out.</p>
