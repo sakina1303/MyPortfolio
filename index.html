@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +7,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script>
+        (function() {
+            const storageKey = 'preferred-theme';
+            try {
+                const storedTheme = localStorage.getItem(storageKey);
+                const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+                const theme = storedTheme || (prefersLight ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                console.warn('Theme preference could not be retrieved before load:', error);
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <div class="brand">
-                <span class="brand-pill">SF</span>
-                <div>
-                    <h1 class="brand-name">Sakina Farukh Ahemad</h1>
-                    <p class="tagline">Developer • Designer • Community Builder</p>
-                </div>
-            </div>
-            <nav>
+            <a class="brand" href="#top" aria-label="Sakina Farukh Ahemad home">
+                <span class="brand-name">Sakina Farukh Ahemad</span>
+            </a>
+            <nav class="main-nav">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a class="btn btn-ghost" href="#contact">Let's Connect</a>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activate light mode" data-mode="dark">
+                    <span class="icon sun" aria-hidden="true">☀️</span>
+                    <span class="icon moon" aria-hidden="true">🌙</span>
+                    <span class="theme-toggle-label">Dark</span>
+                </button>
+                <a class="btn btn-ghost" href="#contact">Let's Connect</a>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h1 class="section-title">About Me</h1>
-        <h4 class="lead">Hello! I'm Sakina, a passionate developer who loves building beautiful and functional web applications.</h4>
-        <p>Welcome to my portfolio! I enjoy exploring new technologies and continuously improving my skills.
-    My journey in web development has been exciting, and I'm thrilled to share my projects and experiences with you.</p>
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title" data-reveal="fade-up">Sakina Farukh Ahemad</h1>
+                <p class="hero-subtitle" data-reveal="fade-up" data-reveal-delay="80">Developer • Designer • Community Builder</p>
+                <p class="hero-intro" data-reveal="fade-up" data-reveal-delay="140">I design and build immersive digital experiences that blend creative storytelling with reliable engineering. My goal is to make technology feel warm, intuitive, and a joy to use.</p>
+                <p class="hero-intro" data-reveal="fade-up" data-reveal-delay="200">From prototyping UI ideas to deploying full-stack products, I care about inclusive design, thoughtful collaboration, and exploring how AI augments human potential.</p>
+                <div class="hero-actions" data-reveal="fade-up" data-reveal-delay="260">
+                    <a class="btn btn-primary hero-btn" href="https://drive.google.com/file/d/1E0ys_E8xgMWXHF6oiLmTT4LqMigGJTUM/view?usp=sharing" target="_blank" rel="noopener">View Resume</a>
+                    <a class="btn btn-secondary hero-btn" href="#projects">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-visual parallax" data-parallax="0.18">
+                <div class="hero-avatar" data-reveal="fade-up" data-reveal-delay="200">
+                    <img src="img.JPG" alt="Portrait of Sakina Farukh" />
+
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="education" class="section">
+    <section id="about" class="section" data-reveal="fade-up">
+        <h1 class="section-title">About Me</h1>
+        <h4 class="lead">I’m a developer with end-to-end experience in building scalable, user-centric applications.</h4>
+        <p>Driven by curiosity and a passion for problem-solving, I’ve worked on full-stack systems at a Bangalore-based agritech startup and contributed to AI-driven solutions and NLP research through Google Summer of Code. I enjoy designing clean architectures and building scalable, impactful applications that combine strong engineering with thoughtful design.</p>
+    </section>
+
+    <section id="education" class="section" data-reveal="fade-up">
         <h1 class="section-title">Education</h1>
         <p>Bachelor of Technology in Computer Science and Engineering with specializiation in Ai & ML</p>
         <p>Newton School of Technology, ADYPU, Pune</p>
@@ -44,7 +82,7 @@
         <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Management Systems</p>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section" data-reveal="fade-up">
         <h1 class="section-title">My Skills</h1>
         <ul class="skills-list">
         <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C++, SQL (MySQL)</li> 
@@ -54,9 +92,44 @@
         <li><strong>Design Tools:</strong> Figma, Canva</li>
         <li><strong>Other Skills:</strong> Responsive Design, UI/UX Design, Debugging, Problem Solving</li>
         </ul>
+        <div class="tech-icon-grid" aria-label="Technology stack logos">
+            <div class="tech-icon" role="img" aria-label="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Python"><i class="devicon-python-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="C Plus Plus"><i class="devicon-cplusplus-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="MySQL"><i class="devicon-mysql-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="React"><i class="devicon-react-original colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="React Native"><i class="devicon-react-original colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Node.js"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Express.js"><i class="devicon-express-original" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Prisma ORM"><i class="devicon-prisma-original" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Git"><i class="devicon-git-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="GitHub"><i class="devicon-github-original" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="MongoDB"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Supabase"><span class="tech-icon-fallback" aria-hidden="true">SB</span></div>
+            <div class="tech-icon" role="img" aria-label="Webflow"><span class="tech-icon-fallback" aria-hidden="true">WF</span></div>
+            <div class="tech-icon" role="img" aria-label="Vercel"><i class="devicon-vercel-original" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Figma"><i class="devicon-figma-plain colored" aria-hidden="true"></i></div>
+            <div class="tech-icon" role="img" aria-label="Canva"><span class="tech-icon-fallback" aria-hidden="true">Cv</span></div>
+        </div>
     </section>
 
-    <section id="extra-curricular" class="section">
+     <section id="achievements" class="section achievements-section" data-reveal="fade-up">
+        <h1 class="section-title">Achievements</h1>
+        <ul class="bulleted-list">
+             <li>LOR and certification from Newton school of technology for leading a project.</li>
+            <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
+            <li>Developed and deployed multiple web applications with a focus on user experience.</li>
+            <li>Advanced to the second round of the 'VisionVault' competition by analyzing HR-based scenarios.</li>
+            <li>Actively contributed to Hacktoberfest, enhancing collaboration and open-source contribution skills.</li>
+            <li>Participated in various hackathons, showcasing problem-solving skills and teamwork.</li>
+            <li>Completed multiple online courses to enhance technical skills and knowledge.</li>
+            <li>Received positive feedback from peers and mentors for collaborative projects.</li>
+        </ul>
+    </section>
+
+    <section id="extra-curricular" class="section" data-reveal="fade-up">
         <h1 class="section-title">Extra-Curricular Activities</h1>
         <ul class="bulleted-list">
             <li>Member , Developers club (NST-SDC), Involved in student clubs and organizations, fostering networking and collaboration.</li>
@@ -71,64 +144,60 @@
             </ul>
     </section>
 
-    <section id="achievements" class="section achievements-section">
-        <h1 class="section-title">Achievements</h1>
-        <ul class="bulleted-list">
-            <li>Contributed to open-source projects on GitHub, gaining recognition from the community.</li>
-            <li>Developed and deployed multiple web applications with a focus on user experience.</li>
-            <li>Advanced to the second round of the 'VisionVault' competition by analyzing HR-based scenarios.</li>
-            <li>Actively contributed to Hacktoberfest, enhancing collaboration and open-source contribution skills.</li>
-            <li>Participated in various hackathons, showcasing problem-solving skills and teamwork.</li>
-            <li>Completed multiple online courses to enhance technical skills and knowledge.</li>
-            <li>Received positive feedback from peers and mentors for collaborative projects.</li>
-        </ul>
-    </section>
+   
 
-    <section id="projects" class="section">
+    <section id="projects" class="section" data-reveal="fade-up">
         <h1 class="section-title">My Projects</h1>
         <div class="projects">
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>AI Quiz Generator</h3>
                 <p>AI Quiz Generator is a smart web app that lets users instantly generate topic-based quizzes using Google’s powerful Gemini AI. Whether you're preparing for exams or just testing your knowledge, this tool helps you learn in an interactive way by generating customized multiple-choice questions (MCQs) on any topic you enter.</p>
                 <a href="https://aiquizgenerator-69r2.onrender.com/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/QuizGenerator" target="_blank">View GitHub Repo</a>
             </div>
-             <div class="project">
+             <div class="project" data-reveal="fade-up">
                 <h3>Agroedge</h3>
                 <p>AgroEdge is a growing agri-tech startup focused on building smart, accessible digital solutions for farmers and agricultural businesses. I contributed to the platform by building an authentication system, integrating an “Apply Now” flow, and developing both frontend and backend features connected to Supabase for real-time data handling. I also collaborated closely with the team, reviewed code, and maintained high-quality, reliable development practices.</p>
                 <a href="https://agroedge-vf.netlify.app/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/agroedge" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+             <div class="project" data-reveal="fade-up">
+                <h3>Operations-Agroedge</h3>
+                <p>Operations-AgroEdge is a role-based full-stack platform built for internal operations at the agritech startup AgroEdge. The system uses a layered permission model with Super Admin, Admin, Mentor, and User roles, each having dedicated dashboards and capabilities. The platform supports essential operational workflows such as user management, role assignment, profile handling, meeting scheduling, and task coordination. Each feature is designed with clean UI, scalable backend logic, and secure, role-specific access.</p>
+                <!-- <a href="https://agroedge-vf.netlify.app/" target="_blank">View Project</a> -->
+                <br>
+                <a href="https://github.com/sakina1303/oprations-agroedge" target="_blank">View GitHub Repo</a>
+            </div>
+            <div class="project" data-reveal="fade-up">
                 <h3>Closy</h3>
                 <p>Closy makes aesthetic outfit decisions effortless by suggesting looks based on your mood and event. It saves time, eliminates decision fatigue, and helps you create polished, stylish combinations with ease. Just pick a vibe, and Closy handles the rest.</p>
                 <a href="https://closy-fashion-app-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/closy-fashion-app" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>Aurora</h3>
                 <p>Aurora is a modern digital diary app that makes journaling simple, aesthetic, and meaningful. It allows users to write daily entries, track their mood, add photos, and enjoy guided prompts. The app also includes a Vision Board for inspiration and a Habit Tracker to build consistency, all wrapped in a soothing pastel design with smooth animations for an engaging experience.</p>
                 <br>
                 <a href="https://github.com/sakina1303/Aurora" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>PermKit</h3>
                 <p>Developed PermKit, a lightweight permission-handling utility for React Native apps supporting Camera, Location, Microphone, and Photo Library access. Built with React Native and react-native-permissions, using platform-specific mapping through the Platform API. Improved cross-platform stability by reducing permission errors and streamlining integration across multiple projects.</p>
                 <a href="https://www.npmjs.com/package/permkit" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/permKit" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>StackMate</h3>
                 <p>StackMate is a multipurpose VS Code extension that enhances developer productivity by centralizing tools like Stack Overflow search, personal notes, a JSON validator, color picker, internet status checker, language switcher, and a tree visualizer, all inside VS Code.</p>
                 <!-- <a href="" target="_blank">View Project</a> -->
                 <br>
                 <a href="https://github.com/sakina1303/VS-code-Extension" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>Ivory Luxe</h3>
                 <p>Developed a responsive Event Planner Website using HTML, CSS, and JavaScript to streamline event management. Key features include:</p>
                 <ul>
@@ -140,34 +209,34 @@
                 <br>
                 <a href="https://github.com/biru-codeastromer/Endsemproject" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>Sip & Savor</h3>
                 <p>A visually stunning and modern portfolio website designed on Webflow, showcasing my skills, projects, and passion for AI, full-stack development, and open-source contributions. Crafted with a sleek, user-friendly interface to create a seamless browsing experience.</p>
                 <a href="https://birajits-superb-site.webflow.io" target="_blank">View Project</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>bmi calculator</h3>
                 <p>A user-friendly BMI (Body Mass Index) calculator that quickly determines BMI based on height and weight inputs. Designed for accuracy and ease of use, it helps users understand their health category with a clean and intuitive interface.</p>
                 <a href="https://bmicalculator-black-chi.vercel.app/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/bmicalculator" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>Get The Weather</h3>
                 <p>weather site provides real-time weather updates for any location, displaying temperature, humidity, and other key details. It offers a simple and user-friendly interface for quick and accurate forecasts.</p>
                 <a href="https://weather-five-ecru.vercel.app/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/Weather" target="_blank">View GitHub Repo</a>
             </div>
-            <div class="project">
+            <!-- <div class="project" data-reveal="fade-up">
                 <h3>Rock Paper Scissor</h3>
                 <p>A simple and interactive Rock-Paper-Scissors game that lets users play against the computer. Built with a clean UI and smooth functionality, it delivers a fun and engaging experience while demonstrating core programming logic and user interaction.</p>
                 <a href="https://rock-paper-scissors-git-main-sakinas-projects-b18e5d9d.vercel.app/" target="_blank">View Project</a>
                 <br>
                 <a href="https://github.com/sakina1303/RockPaperScissors" target="_blank">View GitHub Repo</a>
-            </div>
+            </div> -->
             
-            <div class="project">
+            <div class="project" data-reveal="fade-up">
                 <h3>flashcards</h3>
                 <p>An interactive flashcard application designed to enhance learning and memorization. Users can create, review, and test themselves with customizable flashcards, making studying more efficient and engaging..</p>
                 <a href="https://flashcards-ebon-nu.vercel.app/" target="_blank">View Project</a>
@@ -178,21 +247,20 @@
         </div>
     </section>
 
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section contact-section" data-reveal="fade-up">
         <h2 class="section-title">Contact Me</h2>
         <p>Email: <a href="mailto:sakena1303@gmail.com">sakena1303@gmail.com</a></p>
         <p>Github:  <a href="https://github.com/sakina1303" target="_blank">https://github.com/sakina1303</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/" target="_blank">https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/</a></p>
     </section>
     
-    <section id="quote" class="section quote-section">
+    <section id="quote" class="section quote-section" data-reveal="fade-up">
         <h2 class="section-title">Quote of the Day</h2>
-        
-        <p id="quoteDisplay">Click the button to get a quote!</p>
+        <blockquote id="quoteDisplay">Click the button to get a quote!</blockquote>
         <button id="quoteButton" class="btn btn-primary">Generate Quote</button>
     </section>
 
-    <section id="footer" class="footer-section">
+    <section id="footer" class="footer-section" data-reveal="fade-up">
         
         <h2>Thank you for visiting my portfolio!</h2>
         <p>If you have any questions or would like to connect, feel free to reach out.</p>
